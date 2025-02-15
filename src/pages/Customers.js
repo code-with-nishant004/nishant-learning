@@ -21,35 +21,40 @@ function Customers() {
             <div className="card mb-4">
               {/* /.card-header */}
               <div className="card-body p-0">
-                <table className="table table-striped">
-                  <thead>
-                    <tr>
-                      <th style={{ width: 10 }}>ID</th>
-                      <th>Name</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {customers.length === 0 ? (
-                      <tr>
-                        <td>Loading.....</td>
-                        <td></td>
-                      </tr>
-                    ) : (
-                      customers.map((customer) => (
-                        <tr key={customer.id} className="align-middle">
-                          <td>{customer.id}</td>
-                          <td>{customer.name}</td>
-                        </tr>
-                      ))
-                    )}
-                  </tbody>
-                </table>
+                {
+                  customers.length === 0 ? (                              
+                       <div class="d-flex justify-content-center align-items-center vh-100">
+                        <div class="spinner-border text-dark  text-center" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        </div> 
+                             ) :(    
+                                 <table className="table table-striped">
+                                  <thead>
+                                    <tr>
+                                    <th style={{ width: 10 }}>ID</th>
+                                    <th>Name</th>
+                                    </tr>
+                                  </thead>
+                                                        
+                                  <tbody>
+                                  {customers.map((customer) => (
+                                      <tr key={customer.id} className="align-middle">
+                                      <td>{customer.id}</td>
+                                      <td>{customer.name}</td>
+                                      </tr>
+                                      ))
+                                  } 
+                                  </tbody>
+                                  </table>
+                                )
+                                }
+                </div>
               </div>
               {/* /.card-body */}
             </div>
-          </div>
         </div>
-      </div>
+        </div>
     </Layout>
   );
 }

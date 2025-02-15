@@ -109,6 +109,24 @@ function Layout({ children }) {
                   <p>Products</p>
                 </NavLink>
               </li>
+              <li className="nav-item menu-open">
+                <NavLink to="/signup" className="nav-link active">
+                  <i className="nav-icon bi bi-speedometer" />
+                  <p>Signup</p>
+                </NavLink>
+              </li>
+              <li className="nav-item menu-open">
+                <NavLink to="/sellers" className="nav-link active">
+                  <i className="nav-icon bi bi-speedometer" />
+                  <p>Sellers</p>
+                </NavLink>
+              </li>
+              <li className="nav-item menu-open">
+                <NavLink to="/orders" className="nav-link active">
+                  <i className="nav-icon bi bi-speedometer" />
+                  <p>Orders</p>
+                </NavLink>
+              </li>
             </ul>
             {/*end::Sidebar Menu*/}
           </nav>
