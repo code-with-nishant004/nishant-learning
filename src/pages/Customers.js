@@ -44,14 +44,22 @@ function Customers() {
     setEditmodelopen(false)
   }
   async function handleSubmit(){
-    await fetch(`https://674ab62b71933a4e88533f90.mockapi.io/customer/${SelectedCustomer.id}`,
+    await fetch(`https://674ab62b71933a4e88533f90.mockapi.io/customer/`,
     {
       method: "POST",
-      body: JSON.stringify(SelectedCustomer)
+      body: JSON.stringify(customers)
     }
     );
-    customers.map((customer)=>(
-    customer.id === SelectedCustomer.id ? SelectedCustomer : customer))
+    // customers.map((customer)=>(
+    // customer.id === SelectedCustomer.id ? SelectedCustomer : customer))
+    await fetch('https://674ab62b71933a4e88533f90.mockapi.io/customer')
+    .then((response) => response.json())
+    .then((data) => {
+      setCustomers(data);
+    });
+
+  
+    
     setAddmodelopen(false);
   }
 
